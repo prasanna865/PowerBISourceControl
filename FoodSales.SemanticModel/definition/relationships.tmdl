@@ -1,0 +1,16 @@
+relationship 427a18e4-78cc-4584-b79b-a2a1accf900b
+	fromColumn: Orders.CustomerID
+	toColumn: Customers.CustomerID
+
+relationship 6b12ebb4-782a-437d-8dd2-dc5396b9955e
+	fromColumn: Order_Details.OrderID
+	toColumn: Orders.OrderID
+
+relationship 567d1421-4c49-4991-8142-8e620af3dd23
+	fromColumn: Order_Details.ProductID
+	toColumn: Products.ProductID
+
+relationship e2c690f3-ef15-4f49-b989-c94b0eebc00f
+	fromColumn: Products.CategoryID
+	toColumn: Categories.CategoryID
+
