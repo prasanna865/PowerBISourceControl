@@ -1,0 +1,85 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "c394a9ee36b0838a390b",
+  "position": {
+    "x": 10.465145987991653,
+    "y": 19.767497977317568,
+    "z": 0,
+    "height": 375.5824615690338,
+    "width": 731.39742516075,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Products"
+                    }
+                  },
+                  "Property": "ProductName"
+                }
+              },
+              "queryRef": "Products.ProductName",
+              "nativeQueryRef": "ProductName"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Orders"
+                    }
+                  },
+                  "Property": "OrderDate"
+                }
+              },
+              "queryRef": "Orders.OrderDate",
+              "nativeQueryRef": "OrderDate"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Order_Details"
+                        }
+                      },
+                      "Property": "Quantity"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Order_Details.Quantity)",
+              "nativeQueryRef": "Quantity"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Order_Details"
+                    }
+                  },
+                  "Property": "Revenue"
+                }
+              },
+              "queryRef": "Order_Details.Revenue",
+              "nativeQueryRef": "Revenue"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
